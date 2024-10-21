@@ -1,6 +1,9 @@
 import React from "react";
 import { assets } from "../assets/assets";
 import { useState } from "react";
+import axios from 'axios'
+import { url } from "../App";
+import { toast } from "react-toastify";
 
 const AddSong = () => {
 
@@ -14,11 +17,36 @@ const AddSong = () => {
 
   const onSubmitHandler = async (e) =>{
       e.preventDefault();
+    setLoading(true);
+      try {
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('artist', artist);
+        formData.append('image', image);
+        formData.append('audio', song);
+        formData.append('album', album);
+
+        const response = await axios.post(`${url}/api/song/add`, formData);
+          if (response.data.success) {
+            toast.success("Song added");
+            setName("");
+            setArtist("");
+            setAlbum("none");
+            setImage(false);
+            setSong(false);
+          }
+          else{
+            toast.error("Something is wrong")
+          }
+      } catch (error) {
+        toast.error("Error occured")
+      }
+      setLoading(false);
   }
 
   return loading ? (
      <div className="grid place-items-center min-h-[80vh]">
-        <div className="w-16 h-16 place-self-center border-"></div>
+        <div className="w-16 h-16 place-self-center border-4 border-gray-400 border-t-blue-800 rounded-full animate-spin "></div>
      </div>
   ) : (
     <form onSubmit={onSubmitHandler} className="flex flex-col items-start gap-8 text-gray-600">
