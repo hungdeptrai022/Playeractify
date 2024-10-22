@@ -22,8 +22,8 @@ const DisplayAlbum = () => {
                 <p className='mt-1'>
                     <img className='w-5 inline-block' src={assets.music} alt="" />
                     <b> Playeractive </b>
-                    ** 1,545,324 likes
-                    ** <b>50 Songs </b>
+                    ** 1,123,324 likes
+                    ** <b>20 Songs </b>
                     about 2 hr 30 mins
                 </p>
             </div>    
