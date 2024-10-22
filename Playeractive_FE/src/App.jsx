@@ -23,12 +23,12 @@ const App = () => {
       </div>
       <Player/>
       <audio ref={audioRef} src={track.file} preload='auto'></audio>
-      <Router>
+      {/* <Router>
       <Routes>
         <Route path='/login' element={<LoginPage setIsAuthenticated={setIsAuthenticated}/>}></Route>
         <Route path='/register' element={<RegisterPage setIsAuthenticated={setIsAuthenticated}/>}></Route>
       </Routes>
-    </Router>
+    </Router> */}
     </div>
     
   )
