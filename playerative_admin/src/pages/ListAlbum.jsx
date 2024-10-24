@@ -11,6 +11,7 @@ const ListAlbum = () => {
       try{
 
           const response = await axios.get(`${url}/api/album/list`);
+          // console.log(response.data);
           if (response.data.success) {
             setData(response.data.albums)            
           }
@@ -49,6 +50,7 @@ const ListAlbum = () => {
                   <b>Album Colour</b>
                   <b>Action</b>
             </div>
+          
           {data.map((item,index)=>{
             return (
               <div key={index} className='grid grid-cols-[1fr_1fr_1fr] sm:grid-cols-[0.5fr_1fr_2fr_1fr_0.5fr] items-center gap-2.5 p-3 border border-gray-300 text-sm mr-5'>

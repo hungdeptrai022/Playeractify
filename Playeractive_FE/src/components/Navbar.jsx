@@ -19,17 +19,22 @@ const Navbar = () => {
                 <img onClick={()=>navigate(-1)} className='w-8 bg-black p-2 rounded-2xl cursor-pointer' src={assets.arrow_left} alt="" />
                 <img onClick={()=>navigate(1)} className='w-8 bg-black p-2 rounded-2xl cursor-pointer' src={assets.arrow_right} alt="" />
             </div>
+            <div className='flex items-center gap-3 flex-row'>
+                    <input className='bg-gray-800 text-white focus:outline-none ml-2 w-full' type="text" placeholder='What do you want to play' />
+                    <img  className="w-6 cursor-pointer" src={assets.search_icon} alt="" />
+                    <img  className="w-6 cursor-pointer" src={assets.micro_icon} alt="" />
+            </div>
             <div className='flex items-center gap-4'>
                 <p onClick={handleLoginClick} className='bg-white text-black text-[15px] px-4 py-1 rounded-2xl hidden md:block cursor-pointer'>Log in</p>
                 <p onClick={handleRegisterClick} className='bg-black py-1 px-3 rounded-2xl text-[15px] cursor-pointer'>Register</p>
                 <p className='bg-purple-500 text-black w-7 h-7 rounded-full flex items-center justify-center'>Q</p>
             </div>
         </div>
-        <div className='flex items-center gap-2 mt-4'>
+        {/* <div className='flex items-center gap-2 mt-4'>
             <p className='bg-white text-black px-4 py-1 rounded-2xl cursor-pointer'>All</p>
             <p className='bg-black px-4 py-1 rounded-2xl cursor-pointer'>Song</p>
             <p className='bg-black px-4 py-1 rounded-2xl cursor-pointer'>Artist</p>
-        </div>
+        </div> */}
     </>
   )
 }
