@@ -5,7 +5,7 @@ import Display from '../../components/Display'
 import { PlayerContext } from '../../context/PlayerContext'
 import { BrowserRouter as Router, Route, Routes,useNavigate } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
-import SearchResults from '../SearchResults'
+
 
 const Home = () => {
     const {audioRef,track} = useContext(PlayerContext) 

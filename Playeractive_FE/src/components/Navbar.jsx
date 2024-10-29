@@ -6,12 +6,8 @@ const Navbar = () => {
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState('');
     const [isListening, setIsListening] = useState(false);
-    const [query, setQuery] = useState('');
-    const handleSearch = () => {
-      if (query.trim()) {
-        navigate(`/search?query=${encodeURIComponent(query)}`);
-      }
-    };
+   
+    
     const handleVoiceSearch = () => {
         if (!('webkitSpeechRecognition' in window)) {
           alert('Trình duyệt của bạn không hỗ trợ tìm kiếm bằng giọng nói');
@@ -43,7 +39,7 @@ const Navbar = () => {
             </div>
             <div className='flex items-center gap-3 flex-row'>
                     <input className='bg-stone-800 text-center shadow-inner  text-white focus:outline-none ml-2 rounded-2xl  w-[max(10vw,250px)] h-[max(2vw,35px)] hover:bg-stone-700 focus:bg-stone-700' type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder='What do you want to play' />
-                    <img  className="w-6 cursor-pointer" src={assets.search_icon} onClick={handleSearch}   alt="" />
+                    <img  className="w-6 cursor-pointer" src={assets.search_icon}   alt="" />
                     <img  className="w-6 cursor-pointer" onClick={handleVoiceSearch} src={assets.micro_icon} alt="" /> {isListening && <p>Listening...</p>}
             </div>
             <div className='flex items-center gap-4'>

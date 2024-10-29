@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import DisplayHome from './DisplayHome'
 import DisplayAlbum from './DisplayAlbum'
 import { albumsData } from '../assets/assets'
-import SearchResults from '../pages/SearchResults'
+
 
 
 const Display = () => {
@@ -29,7 +29,7 @@ const Display = () => {
             <Route path='/' element = {<DisplayHome/>}/>
             <Route path='/album/:id' element = {<DisplayAlbum/>}/>
             
-            <Route path='/search' element = {<SearchResults/>}/>
+          
         </Routes>
     </div>
   )
