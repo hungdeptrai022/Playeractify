@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
     const navigate = useNavigate();
-
+    const [searchQuery, setSearchQuery] = useState('');
+    const [isListening, setIsListening] = useState(false);
    
 
   return (
@@ -16,7 +17,7 @@ const Navbar = () => {
             </div>
             <div className='flex items-center gap-3 flex-row'>
                     <input className='bg-stone-800 text-center shadow-inner  text-white focus:outline-none ml-2 rounded-2xl  w-[max(10vw,250px)] h-[max(2vw,35px)] hover:bg-stone-700 focus:bg-stone-700' type="text" placeholder='What do you want to play' />
-                    <img  className="w-6 cursor-pointer" src={assets.search_icon} alt="" />
+                    <img  className="w-6 cursor-pointer" src={assets.search_icon} onClick={()=>navigate('/search')}   alt="" />
                     <img  className="w-6 cursor-pointer" src={assets.micro_icon} alt="" />
             </div>
             <div className='flex items-center gap-4'>
