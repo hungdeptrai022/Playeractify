@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes,useNavigate } from 'react-router
 import Navbar from '../../components/Navbar'
 
 
+
 const Home = () => {
     const {audioRef,track} = useContext(PlayerContext) 
   return (
